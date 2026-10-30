@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Propinas y Dividir Cuenta</title>
+  <!-- Enlace a tu hoja de estilos CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="contenedor-principal">
+    <header class="cabecera">
+      <h1>Calculadora de Cuenta</h1>
+      <p>Divide el total y calcula la propina fácilmente</p>
+    </header>
+
+    <div class="calculadora">
+      <!-- SECCIÓN DE ENTRADA DE DATOS (Inputs) -->
+      <section class="panel-datos">
+        
+        <!-- 1. Total de la cuenta -->
+        <div class="grupo-input">
+          <label for="input-cuenta">Total de la cuenta (€)</label>
+          <input 
+            type="number" 
+            id="input-cuenta" 
+            placeholder="0.00" 
+            min="0" 
+            step="0.01"
+          >
+        </div>
+
+        <!-- 2. Selección de porcentaje de propina -->
+        <div class="grupo-input">
+          <label>Selecciona el % de propina</label>
+          <div class="botones-propina" id="contenedor-propinas">
+            <!-- Usamos data-propina para leer fácilmente el valor desde JS con element.dataset.propina -->
+            <button type="button" class="btn-propina" data-propina="5">5%</button>
+            <button type="button" class="btn-propina" data-propina="10">10%</button>
+            <button type="button" class="btn-propina" data-propina="15">15%</button>
+            <button type="button" class="btn-propina" data-propina="20">20%</button>
+            <input 
+              type="number" 
+              id="input-propina-custom" 
+              placeholder="Otro %" 
+              min="0" 
+              max="100"
+            >
+          </div>
+        </div>
+
+        <!-- 3. Número de personas -->
+        <div class="grupo-input">
+          <div class="cabecera-label">
+            <label for="input-personas">Número de personas</label>
+            <!-- Mensaje de error oculto por defecto para cuando pongan 0 personas -->
+            <span id="mensaje-error" class="error-oculto">Debe ser al menos 1</span>
+          </div>
+          <input 
+            type="number" 
+            id="input-personas" 
+            value="1" 
+            min="1" 
+            step="1"
+          >
+        </div>
+
+      </section>
+
+      <!-- SECCIÓN DE RESULTADOS (Outputs) -->
+      <section class="panel-resultados">
+        
+        <div class="fila-resultado">
+          <div class="texto-resultado">
+            <h2>Propina</h2>
+            <span>/ por persona</span>
+          </div>
+          <div class="cifra-resultado" id="resultado-propina">0.00 €</div>
+        </div>
+
+        <div class="fila-resultado">
+          <div class="texto-resultado">
+            <h2>Total a pagar</h2>
+            <span>/ por persona</span>
+          </div>
+          <div class="cifra-resultado" id="resultado-total">0.00 €</div>
+        </div>
+
+        <div class="fila-resultado resumen-global">
+          <div class="texto-resultado">
+            <h2>Cuenta total (con propina)</h2>
+          </div>
+          <div class="cifra-secundaria" id="resultado-cuenta-global">0.00 €</div>
+        </div>
+
+        <!-- Botón para reiniciar todo -->
+        <button type="button" id="btn-reset" class="btn-reset">Reiniciar</button>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Enlace a tu archivo de lógica JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+/* ==========================================================================
+   HOJA DE ESTILOS (style.css)
+   Escribe aquí tu código CSS para dar diseño a la calculadora.
+   ========================================================================== */
+*{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body{
+font-family: system-ui, sans-serif;
+background-color: #c5e4e7;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.cabecera{
+   text-align: center;
+   margin-bottom: 2rem;
+}
+
+.calculadora{
+   background-color: #ffffff;
+   border-radius: 20px;
+   padding: 2rem;
+   box-shadow: 10px rgba(0, 0, 0, 0.1);
+   max-width: 800px;
+   width: 100%;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 2rem;
+   @media screen {
+      max-width: 650px;
+   }
+}
+
+.grupo-input{
+   margin-bottom: 1.5rem;
+   #label{
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+   }
+}
+
+input [type = "number"]{
+   width: 100%;
+   padding: 0.75rem;
+   font-size: 1.2rem;
+   border: 2px solid #e0e0e0;
+   border-radius: 8px;
+   text-align:right;
+}
+
+.botones-propina{
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 0.75rem;
+}
+
+.btn-propina{
+   background-color: #00474b;
+   color: white;
+   border: none;
+   border-radius: 8px;
+   padding: 0.6rem;
+   font-size: 1.1rem;
+   cursor: pointer;
+}
+
+.btn-propina:hover{
+   background-color: #26c2ad;
+   color: #00474b;
+}
+
+.btn.propina.activo{
+   background-color: #26c2ad;
+   color: #00474b;
+}
+
+.cabecera-label{
+   display:flex;
+   justify-content: space-between;
+   #mensaje-error{
+      color: red;
+   }
+   #error-oculto{
+      display: none;
+   }
+}
+
+.panel-resultados{
+   background-color: #00474b;
+   color: white;
+   border-radius: 15px;
+   padding: 2rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.fila-resultado{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 1.5rem;
+}
+
+.cifra-resultado{
+   font-size: 2.2rem;
+   font-weight: bold;
+   color: #26c2ad;
+   .cifra-secundaria{
+      font-size: 1.4rem;
+      color: #ffffff;
+   }
+}
+
+.btn-reset{
+   width: 100%;
+   padding: 0.8rem;
+   background-color: #26c2ad;
+   color: #00474b;
+   border: none;
+   border-radius: 8px;
+   font-weight: bold;
+   text-transform: uppercase;
+   cursor: pointer;
+}
+
+.btn-reset:hover{
+   background-color: #9fe8df;
+}
