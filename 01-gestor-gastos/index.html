@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Gastos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="contenedor">
+        <h1>Control de Presupuesto</h1>
+        
+        <section class="panel-resumen">
+            <div class="tarjeta">
+                <h3>Presupuesto Inicial</h3>
+                <p id="presupuesto-total">0.00 €</p>
+            </div>
+            <div class="tarjeta">
+                <h3>Gasto Acumulado</h3>
+                <p id="gasto-total">0.00 €</p>
+            </div>
+            <div class="tarjeta">
+                <h3>Saldo Restante</h3>
+                <p id="saldo-restante">0.00 €</p>
+            </div>
+        </section>
+
+        <section class="formularios">
+            <div class="caja-form">
+                <h2>Definir Presupuesto</h2>
+                <input type="number" id="input-presupuesto" placeholder="Ej: 500" min="0">
+                <button id="btn-definir">Establecer</button>
+            </div>
+
+            <div class="caja-form">
+                <h2>Añadir Gasto</h2>
+                <input type="text" id="input-concepto" placeholder="Concepto (ej. Café, Transporte)">
+                <input type="number" id="input-cantidad" placeholder="Cantidad (€)" min="0.01" step="0.01">
+                <select id="select-categoria">
+                    <option value="Comida">Comida</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Ocio">Ocio</option>
+                    <option value="Otros">Otros</option>
+                </select>
+                <button id="btn-agregar">Añadir Gasto</button>
+            </div>
+        </section>
+
+        <section class="historial">
+            <h2>Historial de Gastos</h2>
+            <p id="mensaje-error" class="oculto"></p>
+            <ul id="lista-gastos">
+                <!-- Los elementos <li> se generarán desde app.js -->
+            </ul>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
