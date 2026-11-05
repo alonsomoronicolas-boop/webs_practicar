@@ -79,3 +79,10 @@ main {
 #btn-agregar:hover {
     background-color: #0056b3;
 }
+.oculto{
+    display: none;
+}
+.alerta-roja{
+    color: red;
+    font-weight: bold;
+}
