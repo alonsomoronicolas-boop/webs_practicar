@@ -1,0 +1,88 @@
+/* ==========================================
+   RETOS DE CSS - GESTOR DE GASTOS
+   ==========================================
+   1. Usa variables CSS (:root) para los colores principales.
+   2. Centra '.contenedor' con un max-width de 800px.
+   3. Usa CSS Grid o Flexbox en '.panel-resumen' para poner las 3 tarjetas en fila.
+   4. Diseña la clase '.oculto' con display: none; para el mensaje de error.
+   5. Crea una clase '.alerta-roja' para cuando el saldo restante sea menor a 0.
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    /* Empieza a escribir tus estilos aquí */
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+main {
+    max-width: 800px;
+    width: 100%;
+    padding: 1rem;
+    background-color: aliceblue;
+    border-radius: 15px;
+}
+.contenedor {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+.panel-resumen {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.formularios {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+}
+#input-presupuesto, #input-gasto, #input-cantidad, #input-concepto, #select-categoria {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+#btn-definir{
+    background-color: #007bff;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#btn-definir:hover {
+    background-color: #0056b3;
+}
+#btn-agregar {
+    background-color: #007bff;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#btn-agregar:hover {
+    background-color: #0056b3;
+}
+.oculto{
+    display: none;
+}
+.alerta-roja{
+    color: red;
+    font-weight: bold;
+}
