@@ -68,10 +68,13 @@ btnAgregar.addEventListener('click', () => {
         inputConcepto.value = '';
         inputCantidad.value = '';
     } else {
-        // Si no entra en el if, ahora te avisará en pantalla de por qué es:
-        mensajeError.textContent = '⚠️ Escribe un concepto y una cantidad mayor que 0.';
+        mensajeError.textContent = 'Escribe un concepto y una cantidad mayor que 0.';
     }
 });
+
+function mayus(){
+    listaGastos = listaGastos.ToUpperCase(0);
+}
 
 function actualizarPantalla() {
     saldoFaltante = presupuestoInicial - gastoAcumulado;
@@ -82,6 +85,7 @@ function actualizarPantalla() {
 
     if (saldoFaltante < 0) {
         saldoRestante.classList.add('alerta-roja');
+        alert('No te queda plata. Puto pobre');
     } else {
         saldoRestante.classList.remove('alerta-roja');
     }

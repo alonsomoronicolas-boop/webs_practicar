@@ -55,7 +55,7 @@ main {
     border-radius: 5px;
     margin-top: 1rem;
 }
-#btn-definir{
+#btn-definir, #eliminar{
     background-color: #007bff;
     color: #ffffff;
     font-weight: bold;
@@ -78,6 +78,12 @@ main {
 }
 #btn-agregar:hover {
     background-color: #0056b3;
+}
+#lista-gastos{
+    margin: 20px;
+}
+#lista-gastos li::first-letter{
+    text-transform: uppercase;
 }
 .oculto{
     display: none;
