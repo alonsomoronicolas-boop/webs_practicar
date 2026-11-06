@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro & Tareas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-pomodoro">
+        <section class="reloj-seccion">
+            <div class="selector-modo">
+                <button id="modo-trabajo" class="activo" data-tiempo="25">Trabajo (25m)</button>
+                <button id="modo-descanso" data-tiempo="5">Descanso (5m)</button>
+            </div>
+            
+            <div class="display-reloj">
+                <span id="minutos">25</span>:<span id="segundos">00</span>
+            </div>
+
+            <div class="controles-reloj">
+                <button id="btn-iniciar">Iniciar</button>
+                <button id="btn-pausar">Pausar</button>
+                <button id="btn-reiniciar">Reiniciar</button>
+            </div>
+        </section>
+
+        <section class="tareas-seccion">
+            <h2>Tareas de la sesión</h2>
+            <form id="form-tarea">
+                <input type="text" id="input-tarea" placeholder="¿En qué vas a trabajar hoy?" required>
+                <button type="submit" id="btn-nueva-tarea">+</button>
+            </form>
+
+            <div class="filtros">
+                <button class="filtro-btn activo" data-filtro="todas">Todas</button>
+                <button class="filtro-btn" data-filtro="pendientes">Pendientes</button>
+                <button class="filtro-btn" data-filtro="completadas">Completadas</button>
+            </div>
+
+            <ul id="lista-tareas">
+                <!-- Ejemplo de estructura que debe generar tu JS:
+                <li class="tarea-item">
+                    <span>Repasar eventos del DOM</span>
+                    <div>
+                        <button class="btn-completar">✓</button>
+                        <button class="btn-borrar">✕</button>
+                    </div>
+                </li>
+                -->
+            </ul>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

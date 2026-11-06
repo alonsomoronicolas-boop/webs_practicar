@@ -1,0 +1,296 @@
+/* ==========================================
+   RETOS DE CSS - POMODORO & TAREAS
+   ========================================== */
+
+:root {
+    --color-primario: #ff5e57;
+    --color-primario-hover: #ff3f34;
+    --color-exito: #05c46b;
+    --color-pausa: #ffa801;
+    --color-fondo: #f1f2f6;
+    --color-tarjeta: #ffffff;
+    --color-texto: #2f3542;
+    --color-texto-suave: #747d8c;
+    --color-borde: #dfe4ea;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.app-pomodoro {
+    background-color: var(--color-tarjeta);
+    width: 100%;
+    max-width: 480px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.reloj-seccion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.selector-modo {
+    display: flex;
+    background-color: var(--color-fondo);
+    padding: 0.35rem;
+    border-radius: 12px;
+    gap: 0.4rem;
+}
+
+.selector-modo button {
+    border: none;
+    background: transparent;
+    padding: 0.6rem 1.2rem;
+    border-radius: 9px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-texto-suave);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.display-reloj {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--color-texto);
+    background-color: #f8f9fa;
+    padding: 1rem 2.5rem;
+    border-radius: 16px;
+    border: 2px solid var(--color-borde);
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+#minutos,
+#segundos {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 5rem;
+}
+
+.controles-reloj {
+    display: flex;
+    gap: 0.8rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.controles-reloj button {
+    flex: 1;
+    border: none;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.1s ease, filter 0.2s ease, background-color 0.2s ease;
+}
+
+.controles-reloj button:active {
+    transform: scale(0.96);
+}
+
+#btn-iniciar {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+#btn-iniciar:hover {
+    background-color: var(--color-primario-hover);
+}
+
+#btn-pausar {
+    background-color: var(--color-pausa);
+    color: white;
+}
+
+#btn-pausar:hover {
+    filter: brightness(0.93);
+}
+
+#btn-reiniciar {
+    background-color: var(--color-borde);
+    color: var(--color-texto);
+}
+
+#btn-reiniciar:hover {
+    background-color: #ced6e0;
+}
+
+.tareas-seccion {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    border-top: 2px dashed var(--color-borde);
+    padding-top: 1.8rem;
+}
+
+.tareas-seccion h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-texto);
+}
+
+#form-tarea {
+    display: flex;
+    gap: 0.6rem;
+}
+
+#input-tarea {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--color-borde);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+#input-tarea:focus {
+    border-color: var(--color-primario);
+}
+
+#btn-nueva-tarea {
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    width: 46px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#btn-nueva-tarea:hover {
+    background-color: var(--color-primario-hover);
+}
+
+#btn-nueva-tarea:active {
+    transform: scale(0.95);
+}
+
+.filtros {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.filtro-btn {
+    flex: 1;
+    border: 1px solid var(--color-borde);
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-texto-suave);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filtro-btn:hover {
+    border-color: var(--color-primario);
+    color: var(--color-primario);
+}
+
+.selector-modo button.activo,
+.filtro-btn.activo {
+    background-color: var(--color-primario);
+    color: white;
+    border-color: var(--color-primario);
+    box-shadow: 0 4px 10px rgba(255, 94, 87, 0.3);
+}
+
+#lista-tareas {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.tarea-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--color-borde);
+    transition: all 0.2s ease;
+}
+
+.tarea-item:hover {
+    border-color: #ced6e0;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+}
+
+.tarea-item span {
+    font-size: 0.95rem;
+    word-break: break-word;
+    padding-right: 0.8rem;
+}
+
+.tarea-item div {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.btn-completar,
+.btn-borrar {
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.btn-completar {
+    background-color: rgba(5, 196, 107, 0.15);
+    color: var(--color-exito);
+}
+
+.btn-completar:hover {
+    background-color: var(--color-exito);
+    color: white;
+}
+
+.btn-borrar {
+    background-color: rgba(255, 94, 87, 0.15);
+    color: var(--color-primario);
+}
+
+.btn-borrar:hover {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+.completada {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
