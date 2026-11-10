@@ -13,18 +13,19 @@
 */
 
 // Escribe tu código aquí
-const modoTrabajo = document.querySelector('#modo-trabajo');
-const modoDescanso = document.querySelector('#modo-descanso');
-const tiempoMinutos = document.querySelector('#minutos');
-const tiempoSegundos = document.querySelector('#segundos');
-const btnIniciar = document.querySelector('#btn-iniciar');
-const btnPausar = document.querySelector('#btn-pausar');
-const btnReiniciar = document.querySelector('#btn-reiniciar');
-const tarea = document.querySelector('#form-tarea')
-const inputTarea = document.querySelector('#input-tarea');
-const btnTarea = document.querySelector('#btn-nueva-tarea');
-const listaTareas = document.querySelector('#lista-tareas')
-
+const spanMinutos = document.getElementById('minutos');
+const spanSegundos = document.getElementById('segundos');
+const btniniciar = document.getElementById('boton-iniciar');
+const btnpausar = document.getElementById('boton-pausar');
+const btnreiniciar = document.getElementById('boton-reiniciar');
+const btnTrabajo = document.getElementById('modo-trabajo');
+const btnDescanso = document.getElementById('modo-descanso');
 
 let minutos = 25;
 let segundos = 0;
+let intervalo = setInterval;
+
+function actualizarDisplay(){
+   spanMinutos.textContent = String(minutos).padStart(2, '0');
+   spanSegundos.textContent = String(segundos).padStart(2, '0');
+}
